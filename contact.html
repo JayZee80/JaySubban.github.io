@@ -1,89 +1,57 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - The KRS Crew</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #ffffff;
-            color: #000;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-            display: flex;
-            align-items: center;
-        }
-        nav {
-            margin-left: auto;
-            margin-right: 20px;
-        }
-        nav a {
-            margin: 0 15px;
-            color: white;
-            text-decoration: none;
-        }
-        img {
-            width: 150px;
-            margin: 10px;
-        }
-        main {
-            padding: 20px;
-        }
-        form {
-            margin: 20px auto;
-            width: 300px;
-            text-align: left;
-        }
-        label, input {
-            display: block;
-            margin-bottom: 10px;
-            width: 100%;
-        }
-        input[type="submit"] {
-            background-color: #333;
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <title>Contact - Your Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include the EmailJS library -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 <body>
     <header>
-        <img src="The KRS Crew Log.png" alt="The KRS Crew Logo">
+        <h1>Contact Us</h1>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="whoiam.html">Who I Am</a>
-            <a href="contact.html">Contact</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </nav>
     </header>
     <main>
-        <form action="#" method="post">
+        <h2>Contact Page Content</h2>
+        <!-- Contact form -->
+        <form id="contact-form">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name">
+            <input type="text" id="name" name="name" required>
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
+            <input type="email" id="email" name="email" required>
             <label for="message">Message:</label>
-            <input type="text" id="message" name="message">
-            <input type="submit" value="Send">
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
         </form>
     </main>
     <footer>
-        <p>&copy; 2024 The KRS Crew. All rights reserved.</p>
+        <p>&copy; 2024 Your Website</p>
     </footer>
+
+    <script>
+        // Initialize EmailJS with your user ID
+        emailjs.init("subbanjayindran@gmail.com"); // Replace with your EmailJS user ID
+        // Attach event listener to the form
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Send the form data using EmailJS
+            emailjs.sendForm('service_ld45ou2', 'template_6th50qk', this)
+                .then(function(response) {
+                    alert('Message sent successfully!');
+                }, function(error) {
+                    alert('Failed to send message.');
+                });
+        });
+    </script>
 </body>
 </html>
