@@ -37,21 +37,23 @@
         <p>&copy; 2024 Your Website</p>
     </footer>
 
-    <script>
-        // Initialize EmailJS with your user ID
-        emailjs.init("subbanjayindran@gmail.com"); // Replace with your EmailJS user ID
-        // Attach event listener to the form
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
+<script>
+    // Initialize EmailJS with your public key
+    emailjs.init("_0YCLrUH39zl9pyW7"); // Replace with your actual EmailJS public key
 
-            // Send the form data using EmailJS
-            emailjs.sendForm('service_ld45ou2', 'template_6th50qk', this)
-                .then(function(response) {
-                    alert('Message sent successfully!');
-                }, function(error) {
-                    alert('Failed to send message.');
-                });
-        });
-    </script>
+    // Attach event listener to the form
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Send the form data using EmailJS
+        emailjs.sendForm('service_ld45ou2', 'template_vv52twt', this)
+            .then(function(response) {
+                alert('Message sent successfully!');
+            }, function(error) {
+                alert('Failed to send message.');
+            });
+    });
+</script>
+
 </body>
 </html>
