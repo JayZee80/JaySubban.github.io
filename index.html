@@ -4,25 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to TECHDOCMASTER, your go-to destination for IT services and consultancy. Explore who we are, what we do, and contact us today.">
+    <meta name="description" content="Welcome to TECHDOCMASTER, your go-to destination for expert technical documentation and process mapping services.">
     <title>Home - TECHDOCMASTER</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #ffffff;
-            color: #000;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
         }
         header {
-            background-color: #333;
+            background-color: #0044cc;
             color: white;
             padding: 10px 0;
             display: flex;
             align-items: center;
-        }
-        nav {
-            margin-left: auto;
-            margin-right: 20px;
+            justify-content: space-between;
         }
         nav a {
             margin: 0 15px;
@@ -35,15 +34,34 @@
         }
         main {
             padding: 20px;
+            min-height: calc(100vh - 120px);
+            box-sizing: border-box;
         }
         footer {
-            background-color: #333;
+            background-color: #0044cc;
             color: white;
             padding: 10px 0;
             text-align: center;
-            position: sticky;
+            position: relative;
             bottom: 0;
             width: 100%;
+            box-sizing: border-box;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #0044cc;
+            color: white;
         }
     </style>
 </head>
@@ -58,6 +76,30 @@
     </header>
     <main>
         <p>Welcome to the home of TECHDOCMASTER. Explore who I am, what I do, and feel free to reach out through the contact page.</p>
+        <h2>Services Offered</h2>
+        <p>TECHDOCMASTER offers the following services:</p>
+        <table>
+            <tr>
+                <th>Service</th>
+                <th>Details</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>Essential Doc Package</td>
+                <td>Technical documentation up to 10 pages, with 1 revision.</td>
+                <td>$40</td>
+            </tr>
+            <tr>
+                <td>Comprehensive Doc Suite</td>
+                <td>In-depth technical documentation, 10-25 pages, with 2 revisions.</td>
+                <td>$100</td>
+            </tr>
+            <tr>
+                <td>Advanced Doc Pro Package</td>
+                <td>Comprehensive technical documentation exceeding 25 pages, with unlimited revisions.</td>
+                <td>$200</td>
+            </tr>
+        </table>
     </main>
     <footer>
         <p>&copy; 2024 TECHDOCMASTER. All rights reserved.</p>
