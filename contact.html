@@ -4,27 +4,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - TECHDOCMASTER</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Contact Us - TECHDOCMASTER</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #0044cc;
+            color: white;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+        }
+        img {
+            width: 150px;
+            margin: 10px;
+        }
+        section {
+            padding: 20px;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #0044cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #0033aa;
+        }
+        footer {
+            background-color: #0044cc;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: sticky;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <!-- Include the EmailJS library -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 <body>
     <header>
-        <img src="TECHDOCMASTER.png" alt="TECHDOCMASTER Logo" id="logo">
-        <h1>Contact Me</h1>
+        <img src="TECHDOCMASTER.png" alt="TECHDOCMASTER Logo">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="who-i-am.html">Who I Am</a>
+            <a href="contact.html">Contact</a>
+        </nav>
     </header>
-    <section id="contact">
-        <form action="mailto:youremail@example.com" method="post" enctype="text/plain">
+    <section>
+        <h2>Contact Us</h2>
+        <!-- Contact form -->
+        <form id="contact-form">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
             <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="10" cols="30" required></textarea>
+            <textarea id="message" name="message" required></textarea>
             <button type="submit">Send</button>
         </form>
     </section>
     <footer>
         <p>&copy; 2024 TECHDOCMASTER. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Initialize EmailJS with your public key
+        emailjs.init("_0YCLrUH39zl9pyW7"); // Replace with your actual EmailJS public key
+
+        // Attach event listener to the form
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Send the form data using EmailJS
+            emailjs.sendForm('service_ld45ou2', 'template_vv52twt', this)
+                .then(function(response) {
+                    alert('Message sent successfully!');
+                }, function(error) {
+                    alert('Failed to send message.');
+                });
+        });
+    </script>
 </body>
 </html>
